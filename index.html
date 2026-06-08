@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>茅理翔：一个中国商人的三次出发</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --gold:#B8986A;--gold-lt:#E8D9C0;--gold-dk:#8C6F42;
+  --ink:#1A1510;--ink-2:#3A3228;--ink-3:#5E5448;--ink-4:#8A7D6E;--ink-5:#B5A99A;
+  --cream:#F9F5EE;--cream-2:#F0E8D8;--cream-3:#E2D5C2;--cream-4:#D4C4AC;
+  --white:#FFFFFF;
+  --red:#A85C5C;--red-lt:#F2E0E0;
+  --warm-gray:#8A7D6E;
+}
+body{
+  font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
+  background:var(--cream);color:var(--ink-2);
+  line-height:1.85;overflow-x:hidden;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+}
+
+/* Subtle paper grain texture overlay */
+body::before{
+  content:'';position:fixed;top:0;left:0;right:0;bottom:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;
+}
+
+/* Page load fade-in */
+@keyframes pageFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+body>*{animation:pageFade .9s cubic-bezier(.25,.46,.45,.94) both}
+
+/* ===== NAVIGATION ===== */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(249,245,238,.88);
+  backdrop-filter:blur(16px) saturate(1.2);
+  -webkit-backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:1px solid rgba(212,196,172,.3);
+  padding:16px 48px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,padding .4s;
+}
+nav.scrolled{
+  background:rgba(249,245,238,.96);
+  padding:12px 48px;
+  box-shadow:0 1px 0 rgba(212,196,172,.2);
+}
+.nav-logo{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:20px;color:var(--ink);letter-spacing:6px;
+  font-weight:500;
+}
+.nav-links{
+  display:flex;gap:36px;list-style:none;
+}
+.nav-links a{
+  font-size:12px;color:var(--ink-4);letter-spacing:2px;
+  text-decoration:none;transition:color .3s;
+  position:relative;padding-bottom:4px;
+  font-weight:400;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:0;left:0;
+  width:0;height:1px;background:var(--gold);
+  transition:width .35s cubic-bezier(.25,.46,.45,.94);
+}
+.nav-links a:hover{color:var(--ink-2)}
+.nav-links a:hover::after{width:100%}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1.15fr 1fr;
+  overflow:hidden;position:relative;
+}
+.hero-left{
+  background:var(--ink);
+  display:flex;flex-direction:column;
+  justify-content:center;
+  padding:140px 72px 100px;
+  position:relative;overflow:hidden;
+}
+.hero-left::before{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(ellipse at 75% 40%,rgba(184,152,106,.06) 0%,transparent 60%),
+             radial-gradient(ellipse at 30% 80%,rgba(184,152,106,.03) 0%,transparent 50%);
+}
+.hero-left::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
+  background:linear-gradient(to top,rgba(26,21,16,.4),transparent);
+  pointer-events:none;
+}
+.hero-eyebrow{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:11px;color:var(--gold);letter-spacing:8px;
+  margin-bottom:40px;position:relative;z-index:1;
+  font-weight:400;text-transform:uppercase;
+}
+.hero-headline{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:52px;font-weight:500;
+  color:var(--white);line-height:1.25;
+  margin-bottom:36px;letter-spacing:4px;
+  position:relative;z-index:1;
+}
+.hero-headline em{
+  color:var(--gold);font-style:normal;
+  font-weight:300;
+}
+.hero-subline{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:17px;color:rgba(255,255,255,.55);
+  line-height:2;max-width:420px;
+  margin-bottom:56px;position:relative;z-index:1;
+  font-weight:300;
+}
+.hero-meta{
+  display:flex;gap:48px;position:relative;z-index:1;
+}
+.hero-meta-item{text-align:left;}
+.hero-meta-num{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:40px;color:var(--gold);font-weight:300;letter-spacing:2px;
+  line-height:1.1;
+}
+.hero-meta-label{
+  font-size:10px;color:rgba(255,255,255,.38);
+  letter-spacing:4px;margin-top:8px;
+  text-transform:uppercase;
+}
+
+.hero-right{
+  background:var(--cream-2);
+  display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:140px 60px 100px;
+  position:relative;overflow:hidden;
+}
+.hero-right::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:1px;background:linear-gradient(to right,transparent,var(--gold-lt),transparent);
+}
+.hero-right::after{
+  content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+  background:radial-gradient(ellipse at 20% 20%,rgba(184,152,106,.04) 0%,transparent 50%);
+}
+.hero-quote-big{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:24px;color:var(--ink-2);
+  line-height:1.75;margin-bottom:36px;
+  font-style:normal;
+  border-left:2px solid var(--gold);
+  padding-left:28px;
+  font-weight:400;
+  letter-spacing:1px;
+  position:relative;z-index:1;
+}
+.hero-caption{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:12px;color:var(--ink-4);letter-spacing:3px;
+  text-transform:uppercase;
+  position:relative;z-index:1;
+}
+.hero-timeline-preview{
+  position:absolute;top:100px;right:60px;
+  display:flex;flex-direction:column;gap:18px;
+}
+.htp-item{
+  display:flex;align-items:center;gap:14px;
+  font-size:13px;color:var(--ink-4);
+  position:relative;
+}
+.htp-item::before{
+  content:'';position:absolute;left:3px;top:18px;bottom:-10px;
+  width:1px;background:linear-gradient(to bottom,var(--cream-4),transparent);
+}
+.htp-item:last-child::before{display:none}
+.htp-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;
+  position:relative;z-index:1;
+  box-shadow:0 0 0 3px var(--cream-2);
+}
+.htp-year{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  color:var(--gold-dk);font-size:12px;letter-spacing:2px;
+  min-width:40px;font-weight:500;
+}
+
+/* Floating animation for hero elements */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero-timeline-preview{animation:float 6s ease-in-out infinite}
+
+/* Global red highlight */
+.red{color:var(--red);font-weight:500;background:linear-gradient(180deg,transparent 65%,var(--red-lt) 65%);padding:0 2px;white-space:nowrap}
+
+/* ===== INTRO SECTION ===== */
+.intro{
+  max-width:720px;margin:0 auto;
+  padding:120px 40px 100px;
+  text-align:center;
+}
+.intro-lead{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:22px;color:var(--ink-2);
+  line-height:1.9;margin-bottom:40px;
+  font-weight:400;letter-spacing:1px;
+}
+.intro-lead strong{color:var(--gold-dk);font-weight:500}
+.intro-body{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:15px;color:var(--ink-4);
+  line-height:2.1;
+  font-weight:300;
+  max-width:560px;margin:0 auto;
+}
+.divider{
+  display:flex;align-items:center;gap:24px;
+  margin:64px auto;max-width:280px;
+}
+.divider-line{flex:1;height:1px;background:linear-gradient(to right,transparent,var(--cream-4),transparent)}
+.divider-dot{
+  width:4px;height:4px;border-radius:50%;background:var(--gold);
+}
+
+/* ===== CHAPTER SECTIONS ===== */
+.chapter{
+  max-width:1040px;margin:0 auto;
+  padding:100px 40px;
+}
+.chapter-header{
+  display:flex;align-items:flex-start;gap:40px;
+  margin-bottom:72px;
+}
+.chapter-num{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:120px;color:var(--cream-3);
+  font-weight:300;line-height:.9;
+  flex-shrink:0;user-select:none;
+  letter-spacing:-2px;
+}
+.chapter-header-content{flex:1;padding-top:12px}
+.chapter-label{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:10px;color:var(--gold-dk);letter-spacing:6px;
+  margin-bottom:14px;text-transform:uppercase;
+  font-weight:500;
+}
+.chapter-title{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:38px;font-weight:500;color:var(--ink);
+  letter-spacing:4px;margin-bottom:18px;line-height:1.25;
+}
+.chapter-period{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:13px;color:var(--ink-4);letter-spacing:2px;
+  font-weight:300;
+}
+
+/* Story blocks */
+.story-block{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:56px;margin-bottom:96px;align-items:start;
+}
+.story-block.reverse{direction:rtl}
+.story-block.reverse > *{direction:ltr}
+.story-block.full{grid-template-columns:1fr}
+
+.story-text{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:15.5px;color:var(--ink-3);line-height:2;
+  font-weight:400;
+}
+.story-text p{margin-bottom:22px}
+.story-text p:last-child{margin-bottom:0}
+.story-text strong{color:var(--ink-2);font-weight:500;border-bottom:1px solid var(--gold-lt)}
+.story-text em{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  color:var(--gold-dk);font-style:normal;
+  font-weight:400;
+}
+
+.story-card{
+  background:var(--white);
+  border:1px solid var(--cream-3);
+  border-radius:12px;padding:32px;
+  box-shadow:0 1px 3px rgba(26,21,16,.04),0 8px 24px rgba(26,21,16,.03);
+  transition:transform .5s cubic-bezier(.25,.46,.45,.94),box-shadow .5s cubic-bezier(.25,.46,.45,.94);
+}
+.story-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 4px 12px rgba(26,21,16,.06),0 16px 48px rgba(26,21,16,.05);
+}
+.story-card-icon{
+  font-size:28px;margin-bottom:18px;opacity:.7;
+}
+.story-card-title{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:18px;color:var(--ink);margin-bottom:10px;
+  letter-spacing:2px;font-weight:500;
+}
+.story-card-desc{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:13.5px;color:var(--ink-4);line-height:1.85;
+  font-weight:300;
+}
+
+/* Highlight quote */
+.highlight-quote{
+  margin:72px 0;
+  padding:48px 56px;
+  background:var(--ink);
+  border-radius:16px;
+  position:relative;overflow:hidden;
+}
+.highlight-quote::before{
+  content:'\201C';
+  position:absolute;top:-8px;left:28px;
+  font-size:180px;color:rgba(184,152,106,.06);
+  font-family:'Cormorant Garamond','Georgia',serif;line-height:1;
+  font-weight:300;
+}
+.highlight-quote-text{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:22px;color:rgba(255,255,255,.88);
+  line-height:1.75;margin-bottom:20px;
+  position:relative;z-index:1;
+  font-style:normal;
+  font-weight:400;letter-spacing:1px;
+}
+.highlight-quote-source{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:12px;color:var(--gold);
+  letter-spacing:3px;position:relative;z-index:1;
+  text-transform:uppercase;
+}
+
+/* Key fact cards */
+.fact-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:28px;margin:72px 0;
+}
+.fact-card{
+  padding:32px 28px;
+  border-radius:12px;
+  border:1px solid var(--cream-3);
+  background:var(--white);
+  transition:transform .4s,box-shadow .4s;
+}
+.fact-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 32px rgba(26,21,16,.06);
+}
+.fact-card-year{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:36px;color:var(--gold);
+  font-weight:300;margin-bottom:10px;letter-spacing:2px;
+}
+.fact-card-title{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:15px;color:var(--ink);
+  margin-bottom:8px;font-weight:500;
+  letter-spacing:1px;
+}
+.fact-card-desc{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:12.5px;color:var(--ink-4);line-height:1.8;
+  font-weight:300;
+}
+
+/* Dark section */
+.dark-section{
+  background:var(--ink);
+  padding:120px 0;
+  margin:0;
+  position:relative;
+}
+.dark-section::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,152,106,.15),transparent);
+}
+.dark-section::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,152,106,.15),transparent);
+}
+.dark-section-inner{
+  max-width:1040px;margin:0 auto;padding:0 40px;
+}
+.dark-section-title{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:32px;font-weight:500;color:var(--white);
+  letter-spacing:6px;margin-bottom:72px;
+  text-align:center;
+}
+.dark-section-title span{color:var(--gold);font-weight:400}
+
+.wisdom-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:36px;
+}
+.wisdom-card{
+  padding:40px 32px;
+  border:1px solid rgba(184,152,106,.1);
+  border-radius:16px;
+  background:rgba(255,255,255,.015);
+  transition:all .5s cubic-bezier(.25,.46,.45,.94);
+  position:relative;overflow:hidden;
+}
+.wisdom-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(184,152,106,.2),transparent);
+  opacity:0;transition:opacity .5s;
+}
+.wisdom-card:hover{
+  background:rgba(255,255,255,.035);
+  border-color:rgba(184,152,106,.2);
+  transform:translateY(-2px);
+}
+.wisdom-card:hover::before{opacity:1}
+.wisdom-card-num{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:48px;color:rgba(184,152,106,.12);
+  font-weight:300;margin-bottom:20px;
+  line-height:1;
+}
+.wisdom-card-title{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:17px;color:var(--gold-lt);
+  margin-bottom:16px;letter-spacing:3px;
+  font-weight:500;
+}
+.wisdom-card-quote{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:15px;color:rgba(255,255,255,.7);
+  margin-bottom:20px;
+  font-style:normal;
+  line-height:1.8;letter-spacing:1px;
+}
+.wisdom-card-explain{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:12px;color:rgba(255,255,255,.35);
+  line-height:1.85;
+  font-weight:300;
+}
+
+/* Timeline strip */
+.timeline-strip{
+  padding:100px 0;background:var(--cream-2);
+  position:relative;
+}
+.timeline-strip::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--cream-4),transparent);
+}
+.timeline-strip-inner{
+  max-width:1040px;margin:0 auto;padding:0 40px;
+}
+.ts-title{
+  text-align:center;
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:28px;
+  color:var(--ink);letter-spacing:6px;
+  font-weight:500;margin-bottom:72px;
+}
+.ts-title span{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  color:var(--gold);font-weight:300;
+}
+.ts-flow{
+  position:relative;
+  padding:0 0 0 56px;
+}
+.ts-flow::before{
+  content:'';position:absolute;
+  left:24px;top:0;bottom:0;
+  width:1px;background:linear-gradient(to bottom,var(--gold-lt),var(--cream-4),var(--gold-lt));
+}
+.ts-item{
+  position:relative;margin-bottom:56px;
+  display:flex;gap:28px;align-items:flex-start;
+  opacity:0;transform:translateX(-24px);
+}
+.ts-item:last-child{margin-bottom:0}
+.ts-item.visible{
+  animation:slideIn .7s cubic-bezier(.25,.46,.45,.94) forwards;
+}
+@keyframes slideIn{to{opacity:1;transform:translateX(0)}}
+.ts-node{
+  position:absolute;left:-44px;top:6px;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--cream-2);border:2px solid var(--gold);
+  z-index:1;transition:all .35s cubic-bezier(.25,.46,.45,.94);
+}
+.ts-item:hover .ts-node{
+  transform:scale(1.3);border-width:2.5px;
+  box-shadow:0 0 0 6px rgba(184,152,106,.08);
+}
+.ts-item.big .ts-node{
+  background:var(--gold);
+  width:18px;height:18px;left:-46px;top:4px;
+  border:0;
+}
+.ts-item.big:hover .ts-node{
+  box-shadow:0 0 0 8px rgba(184,152,106,.12);
+}
+.ts-year{
+  min-width:72px;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:22px;
+  color:var(--gold-dk);font-weight:400;letter-spacing:1px;
+}
+.ts-body{flex:1}
+.ts-event{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:17px;color:var(--ink-2);
+  margin-bottom:6px;letter-spacing:1px;font-weight:500;
+}
+.ts-detail{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:13.5px;color:var(--ink-4);line-height:1.8;
+  font-weight:300;
+}
+.ts-badge{
+  display:inline-block;padding:4px 12px;
+  border-radius:20px;font-size:10px;letter-spacing:2px;
+  margin-top:10px;
+  font-weight:500;text-transform:uppercase;
+}
+.badge-start{background:rgba(232,216,192,.5);color:var(--gold-dk)}
+.badge-peak{background:rgba(226,213,194,.5);color:var(--ink-3)}
+.badge-turn{background:rgba(240,232,216,.5);color:var(--ink-3)}
+.badge-wisdom{background:rgba(232,216,192,.5);color:var(--gold-dk)}
+.badge-legacy{background:rgba(226,213,194,.5);color:var(--ink-3)}
+
+/* Profile cards */
+.profile-section{
+  max-width:1040px;margin:0 auto;padding:100px 40px;
+}
+.profile-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px;
+  margin-top:64px;
+}
+.profile-card{
+  background:var(--white);
+  border:1px solid var(--cream-3);
+  border-radius:16px;padding:40px;
+  box-shadow:0 1px 3px rgba(26,21,16,.04),0 8px 24px rgba(26,21,16,.03);
+  transition:transform .5s,box-shadow .5s;
+}
+.profile-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(26,21,16,.06),0 16px 48px rgba(26,21,16,.05);
+}
+.profile-card.featured{
+  border-top:3px solid var(--gold);
+}
+.profile-initial{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:20px;margin-bottom:20px;font-weight:500;
+  letter-spacing:2px;
+}
+.pi-gold{background:var(--gold-lt);color:var(--gold-dk)}
+.pi-blue{background:var(--cream-2);color:var(--ink-3)}
+.pi-red{background:var(--red-lt);color:var(--red)}
+.profile-name{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:20px;color:var(--ink);
+  letter-spacing:3px;margin-bottom:6px;font-weight:500;
+}
+.profile-role{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:12px;color:var(--ink-4);
+  letter-spacing:2px;margin-bottom:20px;
+  text-transform:uppercase;
+  font-weight:400;
+}
+.profile-desc{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:13.5px;color:var(--ink-3);
+  line-height:1.85;
+  font-weight:300;
+}
+.profile-tag{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;
+}
+.ptag{
+  padding:5px 14px;border-radius:20px;font-size:11px;
+  background:var(--cream-2);color:var(--ink-4);letter-spacing:1px;
+  font-weight:400;
+  transition:background .3s,color .3s;
+}
+.ptag:hover{background:var(--gold-lt);color:var(--gold-dk)}
+
+/* closing / CTA */
+.closing{
+  text-align:center;padding:120px 40px;
+  background:var(--gold-lt);
+  position:relative;
+}
+.closing::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--cream-4),transparent);
+}
+.closing-title{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:32px;font-weight:500;color:var(--ink);
+  letter-spacing:6px;margin-bottom:24px;
+}
+.closing-body{
+  font-family:'Noto Sans SC',sans-serif;
+  font-size:15px;color:var(--ink-3);line-height:2;
+  max-width:560px;margin:0 auto 40px;
+  font-weight:300;
+}
+.closing-line{
+  width:48px;height:1px;background:var(--gold);
+  margin:48px auto;
+}
+.closing-seal{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:12px;color:var(--ink-4);letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+/* Footer */
+footer{
+  background:var(--ink);padding:48px;
+  text-align:center;
+  color:rgba(255,255,255,.35);font-size:11px;letter-spacing:3px;
+  font-family:'Noto Sans SC',sans-serif;
+  font-weight:300;
+}
+footer a{color:rgba(184,152,106,.5);text-decoration:none;transition:color .3s}
+footer a:hover{color:rgba(184,152,106,.8)}
+
+/* Section header reusable */
+.section-header{text-align:center;margin-bottom:0}
+.section-header .sh-label{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:10px;color:var(--gold-dk);letter-spacing:8px;margin-bottom:16px;
+  text-transform:uppercase;font-weight:500;
+}
+.section-header h2{
+  font-family:'Noto Serif SC','Songti SC',serif;
+  font-size:28px;font-weight:500;color:var(--ink);letter-spacing:6px;
+}
+.section-header .sh-line{
+  width:48px;height:1px;background:var(--gold);margin:24px auto 0;
+}
+
+/* Scroll reveal animation */
+.reveal{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94);
+}
+.reveal.visible{
+  opacity:1;transform:translateY(0);
+}
+
+/* responsive */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:140px 32px 80px}
+  .hero-headline{font-size:36px;letter-spacing:2px}
+  .hero-subline{font-size:15px}
+  .story-block,.fact-grid,.wisdom-grid,.profile-grid{
+    grid-template-columns:1fr!important
+  }
+  .story-block.reverse{direction:ltr}
+  .chapter-num{font-size:72px}
+  .chapter-title{font-size:26px;letter-spacing:2px}
+  .chapter-header{gap:24px}
+  .wisdom-grid{gap:20px}
+  nav{padding:14px 24px}
+  .nav-links{gap:20px}
+  .nav-links a{font-size:11px;letter-spacing:1px}
+  .intro{padding:80px 24px 60px}
+  .intro-lead{font-size:18px}
+  .closing{padding:80px 24px}
+  .closing-title{font-size:24px}
+  .dark-section{padding:80px 0}
+  .dark-section-title{font-size:24px}
+  .timeline-strip{padding:80px 0}
+  .ts-title{font-size:22px}
+  .highlight-quote{padding:32px}
+  .highlight-quote-text{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-logo">茅理翔</div>
+  <ul class="nav-links">
+    <li><a href="#chapter1">贫寒出身</a></li>
+    <li><a href="#chapter2">点火枪王</a></li>
+    <li><a href="#chapter3">创立方太</a></li>
+    <li><a href="#chapter4">智慧传承</a></li>
+    <li><a href="#timeline">完整年表</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Life Story &middot; 人生故事</div>
+    <h1 class="hero-headline">一个从<em>贫寒</em>家庭走出的<em>商业传奇</em></h1>
+    <p class="hero-subline">他45岁才开始第一次创业，55岁再次出发，从一无所有到缔造百亿厨电帝国。茅理翔的故事，是一代中国人勇气与智慧的写照。</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">3</div>
+        <div class="hero-meta-label">次创业</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">84</div>
+        <div class="hero-meta-label">岁至今仍活跃</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">300亿+</div>
+        <div class="hero-meta-label">茅氏身价</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-timeline-preview">
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <span class="htp-year">1941</span>
+        <span>生于慈溪贫寒农家</span>
+      </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <span class="htp-year">1985</span>
+        <span>45岁首次创业</span>
+      </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <span class="htp-year">1990s</span>
+        <span>世界点火枪大王</span>
+      </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <span class="htp-year">1995</span>
+        <span>55岁创立方太</span>
+      </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <span class="htp-year">2005</span>
+        <span>主动让位传承</span>
+      </div>
+      <div class="htp-item">
+        <div class="htp-dot"></div>
+        <span class="htp-year">至今</span>
+        <span>文化布道不停歇</span>
+      </div>
+    </div>
+    <div class="hero-quote-big">
+      &ldquo;我最大的成就，不是赚了多少钱，而是把儿子培养成了比我更好的企业家。&rdquo;
+    </div>
+    <div class="hero-caption">茅理翔 &middot; 方太集团创始人</div>
+  </div>
+</section>
+
+<!-- Intro -->
+<div class="intro reveal">
+  <p class="intro-lead">
+    你可能每天都在用<strong>方太的油烟机</strong>，但未必知道它背后的故事——一个靠双腿走遍全国的供销员，如何在<strong>人过中年后三次创业</strong>，最终改变了中国千万个家庭的厨房。
+  </p>
+  <div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
+  <p class="intro-body">这不是一个天才的故事，也没有富爸爸。有的只是一个普通人，在对的时机抓住机会，跌倒了再爬起来，一步一步走出了自己的传奇。</p>
+</div>
+
+<!-- Chapter 1 -->
+<section class="chapter reveal" id="chapter1">
+  <div class="chapter-header">
+    <div class="chapter-num">01</div>
+    <div class="chapter-header-content">
+      <div class="chapter-label">Chapter One &middot; 第一章</div>
+      <h2 class="chapter-title">贫寒少年，没有背景只有韧劲</h2>
+      <div class="chapter-period">1941 &mdash; 1984年 &middot; 那些吃苦的日子</div>
+    </div>
+  </div>
+
+  <div class="story-block">
+    <div class="story-text">
+      <p>1941年，茅理翔出生在浙江慈溪的一个普通农家。家里五个孩子，物资匮乏，幼年的他没有机会接受太好的教育。</p>
+      <p>更难的是，少年时期他患上了<span class="red">风湿性关节炎</span>，一度无法走路。眼看高中就要毕业，却不得不辍学。他曾想做作家，也想做医生——这两个梦想都没能实现。</p>
+      <p>但他没有一蹶不振。病好了之后，他在人民公社做了<em>十年会计</em>，练出了一丝不苟的工作习惯。28岁起开始跑供销，常年在外奔波，口袋里揣着<span class="red">止疼片</span>，硬是跑遍了大江南北。</p>
+      <p>别人睡卧铺，他钻到椅子底下凑合一夜，省下路费；别人嫌苦不愿去的地方，他抢着去——因为那里有机会。</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="story-card">
+        <div class="story-card-icon">&#x1F4CD;</div>
+        <div class="story-card-title">浙江慈溪</div>
+        <div class="story-card-desc">他的起点。一个普通的沿海小城，却在改革开放后孕育出一批像茅理翔这样的中国第一代民营企业家。</div>
+      </div>
+      <div class="story-card">
+        <div class="story-card-icon">&#x1F4D2;</div>
+        <div class="story-card-title">二十年的积累</div>
+        <div class="story-card-desc">十年会计 + 十年供销，他没有学历，却练就了最宝贵的东西：读懂市场的眼睛，和走遍人脉的双腿。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-quote reveal">
+    <div class="highlight-quote-text">那些年跑供销，我随身带止疼片，腿疼了就吃两片继续跑。吃苦不是目的，但不吃苦，机会不来找你。</div>
+    <div class="highlight-quote-source">茅理翔 &middot; 回忆早年经历</div>
+  </div>
+</section>
+
+<!-- Chapter 2 -->
+<section class="chapter reveal" id="chapter2">
+  <div class="chapter-header">
+    <div class="chapter-num">02</div>
+    <div class="chapter-header-content">
+      <div class="chapter-label">Chapter Two &middot; 第二章</div>
+      <h2 class="chapter-title">45岁，人生第一次赌一把</h2>
+      <div class="chapter-period">1985 &mdash; 1994年 &middot; 点火枪王的崛起与危机</div>
+    </div>
+  </div>
+
+  <div class="story-block reverse">
+    <div class="story-text">
+      <p>1985年，改革开放的浪潮滚滚而来，茅理翔44岁，做了一个让很多人觉得他&ldquo;疯了&rdquo;的决定：承包慈溪无线电九厂，开始创业。</p>
+      <p>他选的产品是点火枪——就是煤气灶、烤箱用的那种打火装置。这个产品看起来不起眼，但茅理翔发现，国内技术落后，而国外需求旺盛。</p>
+      <p>于是他带着一帮工人，没日没夜地钻研技术，改进产品，然后亲自跑出口销售。<em>几年后，他的脉冲枪、喷火枪卖遍了全世界</em>，外商们惊呼：这个来自中国慈溪的男人，简直就是<span class="red">&ldquo;世界点火枪大王&rdquo;</span>！</p>
+      <p>但好景不长。点火枪技术门槛低，很快被大量模仿，市场竞争白热化，利润一年比一年少。茅理翔意识到：没有自己的品牌和核心技术，早晚有一天会被市场淘汰。</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:24px;">
+      <div class="fact-card" style="border-left:2px solid var(--gold)">
+        <div class="fact-card-year">1985</div>
+        <div class="fact-card-title">白手起家，承包工厂</div>
+        <div class="fact-card-desc">从零开始，靠自己多年积累的供销人脉，硬是把一个小作坊做成了出口工厂。</div>
+      </div>
+      <div class="fact-card" style="border-left:2px solid var(--cream-4)">
+        <div class="fact-card-year">1990s</div>
+        <div class="fact-card-title">&ldquo;世界点火枪大王&rdquo;</div>
+        <div class="fact-card-desc">产品畅销欧美，外商赠予他这个称号。那是他人生中第一次站在世界舞台上。</div>
+      </div>
+      <div class="fact-card" style="border-left:2px solid var(--ink-4)">
+        <div class="fact-card-year">1993</div>
+        <div class="fact-card-title">危机来临</div>
+        <div class="fact-card-desc">产品被模仿，利润崩塌。成为&ldquo;大王&rdquo;的感觉，他没享受太久。这逼迫他必须转型。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 3 -->
+<section class="chapter reveal" id="chapter3">
+  <div class="chapter-header">
+    <div class="chapter-num">03</div>
+    <div class="chapter-header-content">
+      <div class="chapter-label">Chapter Three &middot; 第三章</div>
+      <h2 class="chapter-title">55岁，和儿子一起再出发</h2>
+      <div class="chapter-period">1994 &mdash; 2005年 &middot; 方太帝国的诞生</div>
+    </div>
+  </div>
+
+  <div class="story-block">
+    <div class="story-text">
+      <p>1994年，茅理翔做了一件很多父亲都做不到的事：他说服刚研究生毕业的儿子茅忠群放弃读博，回乡与他共同创业。</p>
+      <p>那时候茅忠群才26岁，满脑子学术理想，对&ldquo;接班&rdquo;一点兴趣都没有。茅理翔讲道理、摆事实，最终把儿子拉了回来。</p>
+      <p>父子俩最初看上的是微波炉，但年轻的茅忠群做了详尽调研，提出了另一个方向：吸油烟机。理由很简单——中国家庭炒菜油烟大，现有的油烟机根本吸不干净，痛点就是市场。</p>
+      <p>1995年，<span class="red">方太厨具</span>正式成立，父子俩把目标定在&ldquo;高端&rdquo;——不打价格战，专做品质。方太第一款大吸力油烟机1996年上市，一炮而红，迅速在厨电市场站稳了脚跟。</p>
+      <p>之后十年，茅理翔一边亲力亲为扩张业务，一边悄悄放手，把越来越多的权力交给儿子。<span class="red">2005年，方太创业十周年，64岁的他正式退位</span>，把董事长的位置交给了茅忠群。</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div class="story-card">
+        <div class="story-card-icon">&#x1F468;&#x200D;&#x1F466;</div>
+        <div class="story-card-title">父子搭档的秘密</div>
+        <div class="story-card-desc">茅理翔主外（资金、人脉、市场），茅忠群主内（产品、技术、管理）。老一辈的江湖经验，配上新一代的系统思维，这个组合几乎无解。</div>
+      </div>
+      <div class="story-card">
+        <div class="story-card-icon">&#x1F3E0;</div>
+        <div class="story-card-title">方太的核心洞察</div>
+        <div class="story-card-desc">中国家庭重油烟的饮食习惯，让吸油烟机成为刚需。方太专注于&ldquo;大吸力&rdquo;这一核心卖点，拒绝低价竞争，坚持高端路线。</div>
+      </div>
+      <div class="story-card">
+        <div class="story-card-icon">&#x1F91D;</div>
+        <div class="story-card-title">主动退位的勇气</div>
+        <div class="story-card-desc">很多创业者宁死不放权，茅理翔却在公司最好的时期主动退出。他说：我的使命是把这个平台建起来，真正跑起来的应该是年轻人。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="highlight-quote reveal">
+    <div class="highlight-quote-text">我们当时就说好了：我出门路，他出门路；我不干涉他的经营，他也不干涉我的传统。父子俩分工明确，感情才不会出问题。</div>
+    <div class="highlight-quote-source">茅理翔 &middot; 讲述方太创业初期分工</div>
+  </div>
+</section>
+
+<!-- Chapter 4 -->
+<section class="chapter reveal" id="chapter4">
+  <div class="chapter-header">
+    <div class="chapter-num">04</div>
+    <div class="chapter-header-content">
+      <div class="chapter-label">Chapter Four &middot; 第四章</div>
+      <h2 class="chapter-title">退而不休，把经验变成礼物</h2>
+      <div class="chapter-period">2005年至今 &middot; 一位老人的第三次&ldquo;创业&rdquo;</div>
+    </div>
+  </div>
+
+  <div class="story-block full">
+    <div class="story-text" style="max-width:680px">
+      <p>退休后的茅理翔，把时间分成了&ldquo;三个三分之一&rdquo;：三分之一讲课，跑北大、浙大、北师大，把自己的创业经历讲给学生和企业家听；三分之一读书写作，已经写了四本关于家族企业管理的书，第五本还在路上；三分之一接待来访者，全国各地的企业主慕名而来，他来者不拒，一杯茶、一段故事，手把手传授经验。</p>
+      <p>他提出了一个在中国企业界影响深远的概念：<span class="red">&ldquo;带三年、帮三年、看三年&rdquo;</span>——接班人要先跟着学三年，再被扶持三年，最后自己独立三年。这个&ldquo;九年接班法&rdquo;被无数家族企业效仿。</p>
+      <p>他还一再强调：<span class="red">富二代要变成创二代</span>，传下去的不是财富，而是创业的精神和责任感。这句话，他不只是说给别人听，也是说给自己儿子茅忠群听的——后者没有辜负他。</p>
+      <p>2022年，茅理翔以约15亿美元的身家登上福布斯全球亿万富豪榜。84岁的他，仍然在路上。</p>
+    </div>
+  </div>
+
+  <div class="fact-grid">
+    <div class="fact-card reveal">
+      <div class="fact-card-year">2006</div>
+      <div class="fact-card-title">创办&ldquo;家业长青学院&rdquo;</div>
+      <div class="fact-card-desc">专门培训家族企业二代接班人，成为中国家族企业传承教育的重要阵地。</div>
+    </div>
+    <div class="fact-card reveal">
+      <div class="fact-card-year">持续</div>
+      <div class="fact-card-title">4本著作 + 无数演讲</div>
+      <div class="fact-card-desc">把几十年的管理心得落在纸上，奔走于各大学府和企业论坛，播撒经验的种子。</div>
+    </div>
+    <div class="fact-card reveal">
+      <div class="fact-card-year">2022</div>
+      <div class="fact-card-title">福布斯全球亿万富豪</div>
+      <div class="fact-card-desc">约15亿美元身家，排名第1929位。那个当年随身带止疼片跑供销的少年，走到了这里。</div>
+    </div>
+  </div>
+</section>
+
+<!-- Wisdom Section -->
+<div class="dark-section">
+  <div class="dark-section-inner">
+    <h2 class="dark-section-title reveal">他留下的<span>三句话</span></h2>
+    <div class="wisdom-grid">
+      <div class="wisdom-card reveal">
+        <div class="wisdom-card-num">01</div>
+        <div class="wisdom-card-title">淡化家族制</div>
+        <div class="wisdom-card-quote">&ldquo;家族企业，关键在于能不能请外人一起管。&rdquo;</div>
+        <div class="wisdom-card-explain">家族成员可以是股东，但公司管理必须走向职业化。这是方太能持续做大的根本原因之一。</div>
+      </div>
+      <div class="wisdom-card reveal">
+        <div class="wisdom-card-num">02</div>
+        <div class="wisdom-card-title">带帮看九年</div>
+        <div class="wisdom-card-quote">&ldquo;带三年、帮三年、看三年——急不得的。&rdquo;</div>
+        <div class="wisdom-card-explain">接班不是一纸任命，是一个需要九年才能完成的过程。很多家族企业败在这里：接班太急，交班太晚。</div>
+      </div>
+      <div class="wisdom-card reveal">
+        <div class="wisdom-card-num">03</div>
+        <div class="wisdom-card-title">富二代变创二代</div>
+        <div class="wisdom-card-quote">&ldquo;传财富不够，要传精神。&rdquo;</div>
+        <div class="wisdom-card-explain">一代积累财富，二代若只会花钱，三代必然败落。茅理翔认为，只有传承创业精神，企业才能跨越代际走下去。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Full Timeline -->
+<div class="timeline-strip" id="timeline">
+  <div class="timeline-strip-inner">
+    <h2 class="ts-title reveal">完整年表 <span>&middot;</span> 茅理翔的一生</h2>
+    <div class="ts-flow">
+
+      <div class="ts-item" data-delay="0.05">
+        <div class="ts-node"></div>
+        <div class="ts-year">1941</div>
+        <div class="ts-body">
+          <div class="ts-event">生于浙江慈溪</div>
+          <div class="ts-detail">出生于物资匮乏的贫寒农家，家中五个兄弟姐妹，幼年生活清苦。</div>
+          <span class="ts-badge badge-start">起点</span>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.1">
+        <div class="ts-node"></div>
+        <div class="ts-year">少年</div>
+        <div class="ts-body">
+          <div class="ts-event">患风湿被迫辍学</div>
+          <div class="ts-detail">高中临近毕业患风湿性关节炎，一度不能走路，两个梦想（作家、医生）相继破碎。</div>
+          <span class="ts-badge badge-turn">逆境</span>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.15">
+        <div class="ts-node"></div>
+        <div class="ts-year">1960s</div>
+        <div class="ts-body">
+          <div class="ts-event">人民公社做会计十年</div>
+          <div class="ts-detail">磨砺出严谨作风，为日后管理企业奠定数字敏感力。</div>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.2">
+        <div class="ts-node"></div>
+        <div class="ts-year">28岁起</div>
+        <div class="ts-body">
+          <div class="ts-event">转行供销员，奔波十年</div>
+          <div class="ts-detail">随身带止疼片，睡椅子底下，跑遍全国，积累人脉与市场经验。</div>
+        </div>
+      </div>
+
+      <div class="ts-item big" data-delay="0.25">
+        <div class="ts-node"></div>
+        <div class="ts-year">1985</div>
+        <div class="ts-body">
+          <div class="ts-event">45岁首次创业：承包慈溪无线电九厂</div>
+          <div class="ts-detail">专注点火枪产品，主打出口市场，硬是把一个小作坊带成出口工厂。</div>
+          <span class="ts-badge badge-start">第一次创业</span>
+        </div>
+      </div>
+
+      <div class="ts-item big" data-delay="0.3">
+        <div class="ts-node"></div>
+        <div class="ts-year">1990s初</div>
+        <div class="ts-body">
+          <div class="ts-event">荣获&ldquo;世界点火枪大王&rdquo;称号</div>
+          <div class="ts-detail">产品畅销全球，外商盛赞。这是他人生第一次站在世界舞台上。</div>
+          <span class="ts-badge badge-peak">巅峰</span>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.35">
+        <div class="ts-node"></div>
+        <div class="ts-year">1993</div>
+        <div class="ts-body">
+          <div class="ts-event">产业危机：市场被模仿者蚕食</div>
+          <div class="ts-detail">技术门槛低，跟风者涌入，利润骤降。茅理翔认识到：没有品牌就没有未来。</div>
+          <span class="ts-badge badge-turn">转折</span>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.4">
+        <div class="ts-node"></div>
+        <div class="ts-year">1994</div>
+        <div class="ts-body">
+          <div class="ts-event">说服儿子茅忠群放弃读博，回乡创业</div>
+          <div class="ts-detail">父子达成约定：父主外（资金人脉），子主内（技术管理）。分工明确，互不干涉。</div>
+          <span class="ts-badge badge-turn">家族传承</span>
+        </div>
+      </div>
+
+      <div class="ts-item big" data-delay="0.45">
+        <div class="ts-node"></div>
+        <div class="ts-year">1995</div>
+        <div class="ts-body">
+          <div class="ts-event">55岁创立方太厨具</div>
+          <div class="ts-detail">定位高端厨电，主打吸油烟机。切入中国家庭做饭重油烟的真实痛点。</div>
+          <span class="ts-badge badge-start">第二次创业</span>
+        </div>
+      </div>
+
+      <div class="ts-item big" data-delay="0.5">
+        <div class="ts-node"></div>
+        <div class="ts-year">1996</div>
+        <div class="ts-body">
+          <div class="ts-event">方太第一款油烟机上市，一炮而红</div>
+          <div class="ts-detail">大吸力卖点精准击中用户需求，方太品牌迅速打响，市场份额快速增长。</div>
+          <span class="ts-badge badge-peak">突破</span>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.55">
+        <div class="ts-node"></div>
+        <div class="ts-year">2001</div>
+        <div class="ts-body">
+          <div class="ts-event">推出&ldquo;欧式外观中国芯&rdquo;产品线</div>
+          <div class="ts-detail">茅忠群主导，融合国际美学与本土技术，进一步确立方太高端定位。</div>
+        </div>
+      </div>
+
+      <div class="ts-item big" data-delay="0.6">
+        <div class="ts-node"></div>
+        <div class="ts-year">2005</div>
+        <div class="ts-body">
+          <div class="ts-event">64岁，主动将董事长职位交给儿子</div>
+          <div class="ts-detail">方太创业十周年。他正式退居幕后，成为名誉董事长。中国家族企业传承史上的一段佳话。</div>
+          <span class="ts-badge badge-legacy">交班</span>
+        </div>
+      </div>
+
+      <div class="ts-item big" data-delay="0.65">
+        <div class="ts-node"></div>
+        <div class="ts-year">2006</div>
+        <div class="ts-body">
+          <div class="ts-event">创办&ldquo;家业长青学院&rdquo;</div>
+          <div class="ts-detail">专培家族企业接班人，提出&ldquo;带三年、帮三年、看三年&rdquo;的九年接班模式，影响数千家企业。</div>
+          <span class="ts-badge badge-wisdom">布道</span>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.7">
+        <div class="ts-node"></div>
+        <div class="ts-year">2006&mdash;</div>
+        <div class="ts-body">
+          <div class="ts-event">高校任教、著书立说</div>
+          <div class="ts-detail">在北大、浙大、北师大等担任兼职教授，已出版四本家族企业管理著作，第五本创作中。</div>
+        </div>
+      </div>
+
+      <div class="ts-item big" data-delay="0.75">
+        <div class="ts-node"></div>
+        <div class="ts-year">2022</div>
+        <div class="ts-body">
+          <div class="ts-event">登上福布斯全球亿万富豪榜</div>
+          <div class="ts-detail">约15亿美元（合人民币逾百亿）身家，排名第1929位。茅氏父子总身价超300亿元。</div>
+          <span class="ts-badge badge-peak">荣誉</span>
+        </div>
+      </div>
+
+      <div class="ts-item" data-delay="0.8">
+        <div class="ts-node"></div>
+        <div class="ts-year">至今</div>
+        <div class="ts-body">
+          <div class="ts-event">84岁，仍在路上</div>
+          <div class="ts-detail">坚持每天慢跑、练书法、打太极，继续讲课和写作。思考要不要进行&ldquo;第三次创业&rdquo;。</div>
+          <span class="ts-badge badge-legacy">持续精彩</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- People Section -->
+<section class="profile-section">
+  <div class="section-header reveal">
+    <div class="sh-label">Key People</div>
+    <h2>故事里的重要人物</h2>
+    <div class="sh-line"></div>
+  </div>
+  <div class="profile-grid">
+    <div class="profile-card featured reveal">
+      <div class="profile-initial pi-gold">茅</div>
+      <div class="profile-name">茅理翔</div>
+      <div class="profile-role">方太集团创始人 &middot; 1941年生</div>
+      <div class="profile-desc">这个故事的主角。从贫寒农家少年到世界点火枪大王，从45岁第一次创业到55岁再次出发，从百亿企业家到文化布道者。他的人生告诉我们：只要不停下来，什么时候出发都不算晚。</div>
+      <div class="profile-tag">
+        <span class="ptag">浙商代表</span>
+        <span class="ptag">家族传承先驱</span>
+        <span class="ptag">终身学习者</span>
+      </div>
+    </div>
+    <div class="profile-card reveal">
+      <div class="profile-initial pi-blue">群</div>
+      <div class="profile-name">茅忠群</div>
+      <div class="profile-role">方太集团董事长 &middot; 1969年生</div>
+      <div class="profile-desc">26岁被父亲召回，放弃读博，接手创业。将儒家思想融入企业管理，著有《儒学商道》，带领方太走向更高峰。</div>
+      <div class="profile-tag">
+        <span class="ptag">上交大硕士</span>
+        <span class="ptag">儒商代表</span>
+      </div>
+    </div>
+    <div class="profile-card reveal">
+      <div class="profile-initial pi-red">家</div>
+      <div class="profile-name">张招娣</div>
+      <div class="profile-role">茅理翔之妻</div>
+      <div class="profile-desc">几十年如一日陪伴在侧，是茅理翔背后最坚实的支撑。家业能长青，少不了她这根顶梁柱。</div>
+      <div class="profile-tag">
+        <span class="ptag">贤内助</span>
+        <span class="ptag">家族基石</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="closing">
+  <h2 class="closing-title reveal">他的故事，告诉我们什么？</h2>
+  <div class="closing-line reveal"></div>
+  <p class="closing-body reveal">茅理翔不是天才，也没有背景。他只是一个普通人，在每一个选择面前，多了一点点勇气。45岁创业，55岁再创业，64岁主动放权——每一步，都需要比常人更大的勇气。</p>
+  <p class="closing-body reveal">他留给我们的，不只是方太这个品牌，而是一种态度：<span class="red">任何时候都可以重新出发。</span></p>
+  <div class="closing-seal reveal">茅理翔 &middot; 1941&mdash; &middot; 浙江慈溪</div>
+</section>
+
+<footer>
+  <p>茅理翔人生脉络图 &middot; 内容整理自公开资料</p>
+  <p style="margin-top:8px;font-size:11px;opacity:.6">数据来源：百度百科 &middot; 搜狐财经 &middot; 东方财富网 &middot; 中国新闻周刊</p>
+</footer>
+
+<script>
+// Scroll reveal animation
+(function(){
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  reveals.forEach(function(el){observer.observe(el)});
+})();
+
+// Timeline item scroll animation
+(function(){
+  var items = document.querySelectorAll('.ts-item');
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var delay = e.target.getAttribute('data-delay')||'0';
+        e.target.style.animationDelay = delay+'s';
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -20px 0px'});
+  items.forEach(function(el){observer.observe(el)});
+})();
+
+// Nav scroll effect
+(function(){
+  var nav = document.querySelector('nav');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+})();
+
+// Nav active highlight
+(function(){
+  var sections = document.querySelectorAll('section[id], div[id]');
+  window.addEventListener('scroll',function(){
+    var sy = window.scrollY + 120;
+    sections.forEach(function(sec){
+      var top = sec.offsetTop, h = sec.offsetHeight;
+      var link = document.querySelector('nav a[href="#' + sec.id + '"]');
+      if(link){
+        if(sy >= top && sy < top + h){
+          link.style.color = 'var(--gold-dk)';
+          link.style.fontWeight = '500';
+        }else{
+          link.style.color = '';
+          link.style.fontWeight = '';
+        }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
